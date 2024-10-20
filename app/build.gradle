@@ -17,7 +17,7 @@ android {
 
     defaultConfig {
         applicationId "org.polymorphicshade.tubular"
-        resValue "string", "app_name", "Tubular"
+        resValue "string", "app_name", "1Tubular"
         minSdk 21
         targetSdk 33
         versionCode 999
@@ -42,7 +42,7 @@ android {
             if (normalizedWorkingBranch.isEmpty() || workingBranch == "master" || workingBranch == "dev") {
                 // default values when branch name could not be determined or is master or dev
                 applicationIdSuffix ".debug"
-                resValue "string", "app_name", "Tubular Debug"
+                resValue "string", "app_name", "1Tubular"
             } else {
                 applicationIdSuffix ".debug." + normalizedWorkingBranch
                 resValue "string", "app_name", "Tubular " + workingBranch
@@ -148,6 +148,7 @@ tasks.register('runCheckstyle', Checkstyle) {
     exclude '**/R.java'
     exclude '**/BuildConfig.java'
     exclude 'main/java/us/shandian/giga/**'
+    exclude 'main'
 
     classpath = configurations.checkstyle
 
